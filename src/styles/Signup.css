@@ -1,0 +1,86 @@
+.signupContainer {
+  height: 100vh;
+  background-color: #01161e;
+  position: relative;
+}
+
+.signupContainer .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  margin-right: 2rem;
+}
+
+.signupContainer h1 {
+  color: white;
+}
+
+.signupContainer h1 span {
+  color: #34addd;
+}
+
+.signupContainer form {
+  margin-top: 30px;
+}
+
+.signupContainer .firstRow input {
+  background-color: #124559;
+  height: 47px;
+  width: 130px;
+  border-radius: 10px;
+  color: white;
+  font-family: "Lusitana";
+  padding-left: 1rem;
+}
+
+.signupContainer .firstRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.secondRow input {
+  background-color: #124559;
+  height: 47px;
+  width: calc(100% - 1.2rem);
+  border-radius: 10px;
+  color: white;
+  font-family: "Lusitana";
+  padding-left: 1rem;
+  margin-top: 30px;
+}
+
+.thirdRow input {
+  background-color: #124559;
+  height: 47px;
+  width: calc(100% - 1.2rem);
+  border-radius: 10px;
+  color: white;
+  font-family: "Lusitana";
+  padding-left: 1rem;
+  margin-top: 30px;
+}
+
+.signupContainer form button {
+  background-color: #0078a7;
+  color: white;
+  font-family: "Lusitana";
+  margin-top: 30px;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+
+.signupContainer .signupForm p {
+  color: #808a8e;
+  font-size: 12px;
+  margin-top: 12px;
+  display: flex;
+  gap: 3px;
+  justify-content: flex-end;
+}
+
+.signupContainer .signupForm p span {
+  color: #0078a7;
+}
