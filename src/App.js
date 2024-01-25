@@ -6,6 +6,16 @@ import { useEffect, useState } from "react";
 import { PulseLoader } from "react-spinners";
 
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoaded(true);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       {isLoaded ? (
