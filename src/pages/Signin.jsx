@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import "../styles/Signin.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const nav = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password).then(() => {
-      alert("omsim");
+      nav("/");
     });
   };
 
