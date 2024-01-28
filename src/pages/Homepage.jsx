@@ -4,28 +4,35 @@ import pic from "../images/Tamano.jpg";
 import Post from "../components/Post";
 import homepage from "../images/home.png";
 import search from "../images/search.png";
+import add from "../svgs/add-circle-svgrepo-com.svg";
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
 const Homepage = () => {
   const [profileClicked, setProfileClicked] = useState(false);
+  const nav = useNavigate();
 
   const handleProfile = () => {
     setProfileClicked((prevProfile) => !prevProfile);
-    setTimeout(() => {
-      setProfileClicked((prevProfile) => !prevProfile);
-    }, 3000);
+  };
+
+  const handleSignout = () => {
+    signOut(auth);
+    nav("/login");
   };
 
   return (
     <div className="homepageContainer">
       {profileClicked ? (
         <div className="profileClicked">
-          <div className="darkenBackground"></div>
-          <div className="container">
-            <div className="signout">
-              <button>Signout</button>
-            </div>
+          <div onClick={handleProfile} className="darkenBackground"></div>
+          <div style={{ bottom: 0 }} className="container">
             <div className="change-account">
-              <button>Change Account</button>
+              <button>Profile</button>
+            </div>
+            <div className="signout">
+              <button onClick={handleSignout}>Signout</button>
             </div>
           </div>
         </div>
@@ -43,10 +50,13 @@ const Homepage = () => {
           <div className="footer">
             <div className="images">
               <button>
-                <img src={homepage} alt="" />
+                <img onClick={() => nav("/")} src={homepage} alt="" />
               </button>
               <button>
                 <img src={search} alt="" />
+              </button>
+              <button>
+                <img style={{ height: 35 }} src={add} alt="" />
               </button>
             </div>
           </div>

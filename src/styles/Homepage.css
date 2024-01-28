@@ -2,6 +2,7 @@
   background-color: #01161e;
   min-height: 100dvh;
   position: relative;
+  overflow: hidden;
 }
 
 /* PROFILE */
@@ -121,6 +122,22 @@
   font-family: "Lusitana";
   padding: 0 20px;
   height: 39px;
+}
+
+.profileClicked .container {
+  position: absolute;
+  overflow: hidden;
+  animation: showContainer 0.3s ease-in-out;
+}
+
+@keyframes showContainer {
+  0% {
+    bottom: -14%;
+  }
+
+  100% {
+    bottom: 0%;
+  }
 }
 
 .profileClicked .container .signout,
